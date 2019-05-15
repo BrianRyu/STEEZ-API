@@ -1,4 +1,4 @@
 class Part < ApplicationRecord
-    belongs_to :posts
-    belongs_to :products
+    belongs_to :post
+    belongs_to :product
 end

@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
     belongs_to :user
-    has_many :uploads
-    has_many :products, through: :uploads
+    has_many :parts
+    has_many :products, through: :parts
 end

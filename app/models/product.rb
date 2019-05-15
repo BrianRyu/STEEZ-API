@@ -1,4 +1,4 @@
 class Product < ApplicationRecord
-    has_many :uploads
-    has_many :posts, through: :uploads
+    has_many :parts
+    has_many :posts, through: :parts
 end

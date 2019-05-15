@@ -14,5 +14,5 @@ apeHeadTrackShorts = Product.create(name: "BAPE Ape Head Track Shorts Black", im
 post1 = Post.create(name: "First Outfit Of The Year", img_url: "/photos/img1.png", views: 0, likes: 0, user_id: mistab.id)
 
 # PARTS
-p1p1 = Part.create(product_id: travi1.id, post_id: post1.id)
-p1p2 = Part.create(product_id: camoFullZipBape.id, post_id: post1.id)
+p1p1 = Part.create(post_id: post1.id, product_id: travi1.id)
+p1p2 = Part.create(post_id: post1.id, product_id: camoFullZipBape.id)
