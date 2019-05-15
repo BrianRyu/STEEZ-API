@@ -1,3 +1,8 @@
+User.destroy_all
+Product.destroy_all
+Post.destroy_all
+Part.destroy_all
+
 # USERS
 mistab = User.create(username: "brian", password: "pw")
 # PRODUCTS
@@ -6,8 +11,8 @@ bred4 = Product.create(name: "Air Jordan 6 Retro 'Infrared' 2019", img_url: "htt
 camoFullZipBape = Product.create(name: "1ST CAMO FULL ZIP HOODIE MENS", img_url: "https://cdn.shopify.com/s/files/1/0214/3706/products/001ZPF301009_YEL_A_large.jpg?v=1553278169", description: "100% Cotton Full Zip Bape Hoodie - yellow camo")
 apeHeadTrackShorts = Product.create(name: "BAPE Ape Head Track Shorts Black", img_url: "https://stockx.imgix.net/products/streetwear/BAPE-Ape-Head-Track-Shorts-Black.jpg?fit=fill&bg=FFFFFF&w=700&h=500&auto=format,compress&q=90&trim=color&updated_at=1555366037&w=2200", description: "BAPE Ape head track shorts - black")
 # POSTS 
-post1 = Post.create(name: "First Outfit Of The Year", img_url: "/photos/img1.png", views: 0, likes: 0)
+post1 = Post.create(name: "First Outfit Of The Year", img_url: "/photos/img1.png", views: 0, likes: 0, user_id: mistab.id)
 
-# UPLOADS
+# PARTS
 p1p1 = Part.create(product_id: travi1.id, post_id: post1.id)
 p1p2 = Part.create(product_id: camoFullZipBape.id, post_id: post1.id)
