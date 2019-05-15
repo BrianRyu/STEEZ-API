@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_15_185658) do
+ActiveRecord::Schema.define(version: 2019_05_15_192920) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "parts", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
@@ -29,13 +36,6 @@ ActiveRecord::Schema.define(version: 2019_05_15_185658) do
     t.string "name"
     t.string "img_url"
     t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "uploads", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
