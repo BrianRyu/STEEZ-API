@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       resources :parts
       resources :posts
       resources :products
-      resources :users, only: [:create]
+      resources :users
       post '/login', to: 'auth#create'
       get '/profile', to: 'users#profile'
     end
