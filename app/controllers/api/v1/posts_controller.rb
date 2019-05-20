@@ -1,5 +1,6 @@
 class Api::V1::PostsController < ApplicationController
     before_action :find_post, only: [:update]
+        
     def index
         @posts = Post.all
         render json: @posts
@@ -26,7 +27,7 @@ class Api::V1::PostsController < ApplicationController
     private
     
     def post_params
-        params.permit(:user_id, :name, :img_url, :views, :likes)
+        params.permit(:name, :img_url, :views, :likes, :user_id)
     end
     
     def find_post
