@@ -1,9 +1,15 @@
 class Api::V1::ProductsController < ApplicationController
     before_action :find_product, only: [:update]
     
+
     def index
         @products = Product.all
         render json: @products
+    end
+
+    def show
+        @product = Product.find(params[:id])
+        render json: @product
     end
 
     def new
@@ -14,7 +20,7 @@ class Api::V1::ProductsController < ApplicationController
         @product = Product.create(product_params)
         render json: @product, status: :accepted
     end 
-    
+
     def update
         @product.update(product_params)
         if @product.save
