@@ -1,5 +1,5 @@
 class Api::V1::ProductsController < ApplicationController
-    before_action :find_product, only: [:update]
+    before_action :find_product, only: [:update, :delete]
     
 
     def index
@@ -29,6 +29,11 @@ class Api::V1::ProductsController < ApplicationController
         render json: { errors: @product.errors.full_messages }, status: :unprocessible_entity
         end
     end
+
+    def delete
+        @product.destroy
+        render json: @products
+    end 
     
     private
     
