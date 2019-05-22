@@ -1,6 +1,7 @@
 class Api::V1::PostsController < ApplicationController
     before_action :find_post, only: [:update]
-        
+    # skip_before_action :authorized    
+
     def index
         @posts = Post.all
         render json: @posts
