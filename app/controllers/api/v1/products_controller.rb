@@ -1,6 +1,6 @@
 class Api::V1::ProductsController < ApplicationController
-    before_action :find_product, only: [:update, :delete]
-    
+    before_action :find_product, only: [:update, :destroy]
+    # skip_before_action :authorized
 
     def index
         @products = Product.all
@@ -30,9 +30,9 @@ class Api::V1::ProductsController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         @product.destroy
-        render json: @products
+        render json: @product
     end 
     
     private
