@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-    skip_before_action :authorized, only: [:create, :login]
+    skip_before_action :authorized, only: [:show, :index, :create, :login]
 
     def index
       @users = User.all 
@@ -33,9 +33,15 @@ class Api::V1::UsersController < ApplicationController
     def profile 
       render json: { user: UserSerializer.new(current_user) }, status: :accepted
     end 
+
+    def auto_login
+      user_id = request.headers["Authorization"]
+      @user = User.find(user_id)
+      render json: @user
+    end 
    
     private
     def user_params
-      params.require(:user).permit(:username, :password)
+      params.permit(:username, :password)
     end
   end
