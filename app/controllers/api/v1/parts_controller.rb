@@ -1,6 +1,6 @@
 class Api::V1::PartsController < ApplicationController
     before_action :find_part, only: [:update]
-    # skip_before_action :authorized
+    skip_before_action :authorized
 
     def index
         @parts = Part.all 
