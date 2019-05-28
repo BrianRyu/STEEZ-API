@@ -1,7 +1,7 @@
 class Api::V1::ProductsController < ApplicationController
     before_action :find_product, only: [:update, :destroy]
-    skip_before_action :authorized
-
+    before_action :authorized, only: [:create]
+    
     def index
         @products = Product.all
         render json: @products
