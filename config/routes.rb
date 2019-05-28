@@ -5,7 +5,9 @@ Rails.application.routes.draw do
       resources :posts
       resources :products
       resources :users
-      post '/login', to: 'users#login'
+      post '/login', to: 'auth#login'
+      get '/auto_login', to: 'auth#auto_login'
+      
       get '/profile', to: 'users#profile'
     end
   end
