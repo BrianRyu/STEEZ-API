@@ -26,9 +26,9 @@ cycleJacket = Product.create(name: "PASTEL COLOR CYCLE JACKET", img_url: "https:
 
 
 # POSTS 
-post1 = Post.create(name: "First Outfit Of The Year", img_url: "/img1.png", views: 0, likes: 0, user_id: brian.id)
-post2 = Post.create(name: "Bred 4's The Return!", img_url: "/img2.png", views: 0, likes: 0, user_id: brian.id)
-post3 = Post.create(name: "Travi! YUH!", img_url: "/img3.png", views: 0, likes: 0, user_id: brian.id)
+post1 = Post.create(name: "First Outfit Of The Year", img_url: "https://scontent.cdninstagram.com/vp/76f97bb7f55e2c8079153df8fb19a660/5D554BE2/t51.2885-15/e35/p320x320/56237881_2334136760245868_8944875153641777963_n.jpg?_nc_ht=scontent.cdninstagram.com", views: 0, likes: 0, user_id: brian.id)
+post2 = Post.create(name: "Bred 4's The Return!", img_url: "https://scontent.cdninstagram.com/vp/acee667d5d9010c43978759edf37b331/5D8FA738/t51.2885-15/e35/s320x320/61395240_1867448326690691_7301308547017904105_n.jpg?_nc_ht=scontent.cdninstagram.com", views: 0, likes: 0, user_id: brian.id)
+post3 = Post.create(name: "Travi! YUH!", img_url: "https://scontent.cdninstagram.com/vp/0d366ea8c97271e579569224eadd3360/5D9B570F/t51.2885-15/e35/s320x320/60712032_2689994937696753_8286882169837474275_n.jpg?_nc_ht=scontent.cdninstagram.com", views: 0, likes: 0, user_id: brian.id)
 
 # PARTS
 part1 = Part.create(post_id: post1.id, product_id: travi1.id)

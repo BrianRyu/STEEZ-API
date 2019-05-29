@@ -1,6 +1,6 @@
 class Api::V1::ProductsController < ApplicationController
-    before_action :find_product, only: [:update, :destroy]
-    before_action :authorized, only: [:create]
+    before_action :find_product, only: [:show, :update, :destroy]
+    before_action :authorized, only: [:create, :update]
     
     def index
         @products = Product.all
@@ -8,13 +8,8 @@ class Api::V1::ProductsController < ApplicationController
     end
 
     def show
-        @product = Product.find(params[:id])
         render json: @product
     end
-
-    def new
-        @product = Product.new
-    end 
 
     def create
         @product = Product.create(product_params)
