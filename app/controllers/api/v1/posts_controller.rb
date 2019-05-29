@@ -17,7 +17,7 @@ class Api::V1::PostsController < ApplicationController
     end 
 
     def update
-        @post.update(params.permit(:likes))
+        @post.update(params.permit(:likes, :views))
         if @post.save
         render json: @post, status: :accepted
         else
