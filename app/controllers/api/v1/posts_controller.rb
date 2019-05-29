@@ -12,7 +12,7 @@ class Api::V1::PostsController < ApplicationController
     end
 
     def create
-        @post = @user.posts.create(post_params)
+        @post = @user.posts.create(params.permit(:name, :img_url, :user_id))
         render json: @post, status: :accepted
     end 
 
