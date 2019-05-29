@@ -1,23 +1,23 @@
 class Api::V1::PostsController < ApplicationController
-    before_action :find_post, only: [:update]
-    skip_before_action :authorized    
+    before_action :find_post, only: [:show, :update]
+    before_action :authorized, only: [:create]
 
     def index
         @posts = Post.all
         render json: @posts
     end
-
-    def new
-        @post = Post.new
-    end 
+    
+    def show
+        render json: @post
+    end
 
     def create
-        @post = Post.create(post_params)
+        @post = @user.posts.create(post_params)
         render json: @post, status: :accepted
     end 
-    
+
     def update
-        @post.update(post_params)
+        @post.update(params.permit(:likes, :views))
         if @post.save
         render json: @post, status: :accepted
         else
