@@ -1,24 +1,22 @@
-# README
+# Startup & Install
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Run bundle install before starting the server. Front-end is has fetch routes pointing towards http://localhost:3005. 
 
-Things you may want to cover:
+Rails s -p 3005 in order to connect frontend with API properly.
 
-* Ruby version
+# Models
 
-* System dependencies
+There are a total of four (4)  models: Part, Post, Product and User.
 
-* Configuration
+User has_many posts.
+Product has_many parts and has_many posts through parts.
+Post belongs_to user, has_many parts and has_many products through parts.
+Part belongs_to post and belongs_to product as a joiner of two.
 
-* Database creation
+# Authentication && Authorization
 
-* Database initialization
+Auth is carried out with JWT. User authentication and authorization includes validations on username and password - JWT token is saved in localstorage. Active model serializers utilized for model associations.
 
-* How to run the test suite
+# Database
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Initial seed.rb file contains initial data for application functionality. Users have the ability, after authorization and authentication, to import data through the web-app and the data is then persisted to the database, asychronous rendering. 
