@@ -50,7 +50,7 @@ post2 = Post.create(name: "Bred 4's The Return!", img_url: "https://scontent.cdn
 post3 = Post.create(name: "Travi! YUH!", img_url: "https://scontent.cdninstagram.com/vp/b103639c0f7f29e3e1c4374dbbc4e560/5D9ACCCF/t51.2885-15/e35/p320x320/58737538_1290363617788618_4205048715173578764_n.jpg?_nc_ht=scontent.cdninstagram.com", views: 0, likes: 0, user_id: brian.id)
 post4 = Post.create(name: "OffWhite x Jawden Uno, Get At Me!", img_url: "https://scontent.cdninstagram.com/vp/6814276b865435e5d5f8e1a97c49d8c6/5D9F8234/t51.2885-15/e35/s320x320/57311724_769207123474790_4489078662096435745_n.jpg?_nc_ht=scontent.cdninstagram.com", views: 0, likes: 0, user_id: brian.id)
 post5 = Post.create(name: "Palace At The Beach", img_url: "https://scontent.cdninstagram.com/vp/c87ce966eb1543a43bbfb019913257e9/5D968613/t51.2885-15/e35/s320x320/59265566_291979398407315_7282558010052910238_n.jpg?_nc_ht=scontent.cdninstagram.com", views: 0, likes: 0, user_id: brian.id)
-post6 = Post.create(name: "Waves on Waves on Waves", img_url: "https://scontent.cdninstagram.com/vp/bef2453845687f08e4be7699f020986f/5D3B0C05/t51.2885-15/e35/s320x320/54247761_575221952981226_7760085734301534408_n.jpg?_nc_ht=scontent.cdninstagram.com", views: 0, likes: 0, user_id: brian.id)
+post6 = Post.create(name: "Waves on Waves on Waves", img_url: "https://www.aiobot.com/wp-content/uploads/2018/08/adidas-yeezy-700-waverunner.jpg", views: 0, likes: 0, user_id: brian.id)
 
 
 # PARTS
@@ -73,7 +73,3 @@ part12 = Part.create(post_id: post5.id, product_id: floralSupremeShorts.id)
 part13 = Part.create(post_id: post5.id, product_id: palaceGreyHoodie.id)
 
 part14 = Part.create(post_id: post6.id, product_id: waverunner.id)
-
-# COMMENTS
-
-brian1 = Comment.create(user_id: brian.id, post_id: post1.id, comment: "This is the first comment")
