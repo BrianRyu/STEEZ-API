@@ -73,3 +73,8 @@ part12 = Part.create(post_id: post5.id, product_id: floralSupremeShorts.id)
 part13 = Part.create(post_id: post5.id, product_id: palaceGreyHoodie.id)
 
 part14 = Part.create(post_id: post6.id, product_id: waverunner.id)
+
+
+# Comments
+
+comment1 = Comment.create(user_id: brian.id, post_id: post1.id, comment: "hello there")
